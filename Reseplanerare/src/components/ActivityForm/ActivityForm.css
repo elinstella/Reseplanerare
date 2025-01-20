@@ -1,0 +1,76 @@
+/* Grundläggande styling för formuläret */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Stil för input-fält */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Stil för knappen */
+button {
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+/* Styling för aktivitetsposter */
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+li {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling för rubriker */
+h3 {
+    margin: 0;
+    color: #333;
+}
+
+/* Styling för plats och datum */
+p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #6200ea;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
