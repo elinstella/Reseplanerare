@@ -4,6 +4,7 @@ import ActivityForm from './components/ActivityForm/ActivityForm';
 import ActivityList from './components/ActivityList/ActivityList';
 import Footer from "./components/Footer/Footer";
 
+
 const App = () => {
     const [activities, setActivities] = useState([]);
     const [activityToEdit, setActivityToEdit] = useState(null); // Ny state för att hålla reda på aktivitet som ska redigeras

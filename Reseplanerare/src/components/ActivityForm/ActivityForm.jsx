@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ActivityForm.css';
 import PropTypes from 'prop-types';
+import LocationSearch from '../LocationSearch/LocationSearch';
 
 const ActivityForm = ({ addActivity, editActivity, activityToEdit }) => {
     const [name, setName] = useState('');
@@ -24,14 +25,16 @@ const ActivityForm = ({ addActivity, editActivity, activityToEdit }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (name && date && location) {
+            console.log("Lägger till aktivitet:", { name, date, location });
+
+            // Skicka aktivitet till rätt funktion beroende på om det är en ny aktivitet eller en uppdatering
             if (activityToEdit) {
-                // Om vi redigerar en aktivitet, använd editActivity
                 editActivity(activityToEdit.id, { name, date, location });
             } else {
-                // Om vi skapar en ny aktivitet, använd addActivity
                 addActivity({ name, date, location });
             }
-            // Återställ formuläret och eventuella felmeddelanden
+
+            // Återställ formuläret
             setName('');
             setDate('');
             setLocation('');
@@ -54,11 +57,12 @@ const ActivityForm = ({ addActivity, editActivity, activityToEdit }) => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
             />
-            <input
-                type="text"
-                placeholder="Plats"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
+            <LocationSearch 
+                onSelectLocation={(locationData) => {
+                    console.log("Vald plats:", locationData);  // Logga den valda platsen för att säkerställa att den är rätt
+                    setLocation(locationData.formatted);  // Sätt den formaterade platsen som valts
+                }} 
+                selectedLocation={location} // Skicka den valda platsen till LocationSearch så den visas i input-fältet
             />
             <button type="submit">
                 {activityToEdit ? 'Uppdatera aktivitet' : 'Lägg till aktivitet'}
