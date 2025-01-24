@@ -1,0 +1,17 @@
+.footer {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; 
+}
+
+.footer p {
+    margin: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: aliceblue;
+}

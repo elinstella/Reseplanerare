@@ -1,3 +1,4 @@
+/* Grundläggande styling för formuläret */
 form {
     display: flex;
     flex-direction: column;
@@ -12,6 +13,7 @@ form {
     box-sizing: border-box;
 }
 
+/* Stil för input-fält */
 input {
     padding: 15px;
     font-size: 16px;
@@ -29,44 +31,107 @@ input:focus {
     box-shadow: 0 0 8px rgba(98, 0, 234, 0.3);
 }
 
+/* Container för knapparna för att placera dem horisontellt */
+.button-container {
+    display: flex;
+    gap: 15px; /* Mellanrum mellan knapparna */
+    margin-top: 10px;
+}
 
-/* Stil för knappen */
+/* Gemensam stil för knapparna */
 button {
-    padding: 15px;
-    background: #6200ea;
-    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
     border: none;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease;
-    width: 100%;
-    box-sizing: border-box;
+    transition: all 0.3s ease;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-button:hover {
-    background: #3700b3;
+/* Stil för Redigera-knappen */
+.edit-btn {
+    background-color: #6200ea;
+    color: white;
 }
 
-/* Styling för aktivitetsposter */
+.edit-btn:hover {
+    background-color: #3700b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.edit-btn:active {
+    background-color: #6200ea;
+    transform: translateY(1px);
+}
+
+/* Stil för Ta bort-knappen */
+.delete-btn {
+    background-color: #e91e63;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c2185b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.delete-btn:active {
+    background-color: #e91e63;
+    transform: translateY(1px);
+}
+
+
+/* Styling för listan */
+/* Styling för listan */
 ul {
     list-style: none;
     padding: 0;
-    max-width: 600px;
-    margin: 50px auto 20px;
+    margin: 50px 0 90px 0; /* Lite avstånd från toppen och botten */
+    display: grid; /* Gör ul till en grid */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamiska kolumner */
+    gap: 20px; /* Avstånd mellan grid-items */
     box-sizing: border-box;
+    max-width: 1200px; /* Maximal bredd */
+    width: 100%; /* Se till att ul täcker hela bredden */
 }
 
+
+/* Container för listan */
+.activity-container {
+    display: flex;
+    justify-content: center;  /* Centrerar grid horisontellt */
+    width: 100%;
+    padding: 20px;  /* Avstånd runt om */
+}
+
+/* Styling för listan */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0 90px 0; /* Lite avstånd från toppen och botten */
+    display: grid; /* Gör ul till en grid */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Dynamiska kolumner */
+    gap: 20px; /* Avstånd mellan grid-items */
+    box-sizing: border-box;
+    max-width: 1200px;  /* Maximal bredd */
+    width: 100%;  /* Se till att ul täcker hela bredden */
+}
+
+/* Styling för aktivitetsposter */
 li {
     background: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    margin: 15px 0;
+    margin: 0; /* Ta bort yttre marginaler för li, eftersom grid hanterar placeringen */
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Gör li till en flex-container om du vill centrera innehållet */
+    flex-direction: column; /* Håll innehållet i vertikal ordning */
+    align-items: center; /* Centrera innehållet inom varje li */
+    justify-content: center; /* Centrerar vertikalt inom li */
 }
+
 
 /* Styling för rubriker */
 h3 {
@@ -76,11 +141,19 @@ h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
 /* Styling för plats och datum */
 p {
     margin: 5px 0;
     color: #666;
     font-size: 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.activity-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
