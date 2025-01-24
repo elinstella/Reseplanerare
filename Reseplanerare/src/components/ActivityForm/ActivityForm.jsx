@@ -1,4 +1,3 @@
-// src/components/ActivityForm.jsx
 import { useState } from 'react';
 import './ActivityForm.css';
 import PropTypes from 'prop-types';  // Importera PropTypes
